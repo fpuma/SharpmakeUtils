@@ -16,7 +16,7 @@ internal class ICompiledProject
         conf.Defines.Add("_CRT_SECURE_NO_WARNINGS");
         conf.Options.Add(Sharpmake.Options.Vc.Compiler.Exceptions.Enable);
         conf.Options.Add(Sharpmake.Options.Vc.General.WindowsTargetPlatformVersion.Latest);
-        conf.Options.Add(Sharpmake.Options.Vc.Compiler.CppLanguageStandard.CPP17);
+        conf.Options.Add(Sharpmake.Options.Vc.Compiler.CppLanguageStandard.CPP20);
 
         string[] warningsToIgnore = { "4100" };
         Sharpmake.Options.Vc.Compiler.DisableSpecificWarnings disableSpecificWarnings = new Sharpmake.Options.Vc.Compiler.DisableSpecificWarnings(warningsToIgnore);
