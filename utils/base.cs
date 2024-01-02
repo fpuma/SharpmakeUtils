@@ -2,7 +2,7 @@ using System.IO;
 
 internal class ICompiledProject
 {
-    public void ConfigureAll(Sharpmake.Project.Configuration conf, Sharpmake.Target target)
+    static public void ConfigureAll(Sharpmake.Project.Configuration conf, Sharpmake.Target target)
     {
         //Name of the project file
         conf.ProjectFileName = "[project.Name]_[target.Platform]_[target.DevEnv]";
@@ -27,16 +27,16 @@ internal class ICompiledProject
     }
 }
 
-namespace Puma.Common
+namespace Puma.SharpmakeBase
 {
     //******************************************************************************************
-    //My Solutions
+    //Solution
     //******************************************************************************************
 
     [Sharpmake.Generate]
-    public abstract class IMySolution : Sharpmake.Solution
+    public abstract class ISolution : Sharpmake.Solution
     {
-        public IMySolution(string _solutionName)
+        public ISolution(string _solutionName)
         {
             Name = _solutionName;
             AddTargets(Puma.SharpmakeUtils.GetDefaultTarget());
@@ -50,7 +50,7 @@ namespace Puma.Common
     }
 
     //******************************************************************************************
-    //My projects
+    //Projects
     //******************************************************************************************
     [Sharpmake.Generate]
     public abstract class IApplication: Sharpmake.Project
@@ -59,8 +59,6 @@ namespace Puma.Common
 
         public readonly string ProjectGenerationPath = Puma.SharpmakeUtils.GetProjectsPath() + @"\[project.Name]";
         public readonly string TargetOutputPath    = Puma.SharpmakeUtils.GetOutputPath();
-
-        private ICompiledProject m_compiledProject = new ICompiledProject();
 
         public IApplication(string _projectName, string _sourceFolder)
         {
@@ -73,7 +71,7 @@ namespace Puma.Common
         [Sharpmake.Configure]
         public virtual void ConfigureAll(Configuration conf, Sharpmake.Target target)
         {
-            m_compiledProject.ConfigureAll(conf, target);
+            ICompiledProject.ConfigureAll(conf, target);
 
             //Path were the project will be generated
             conf.ProjectPath = ProjectGenerationPath;
@@ -113,13 +111,15 @@ namespace Puma.Common
         }
     }
 
-
+    //******************************************************************************************
+    //Exports
+    //******************************************************************************************
     [Sharpmake.Export]
-    abstract public class IBinaries : Sharpmake.Project
+    public abstract class IExportProject : Sharpmake.Project
     {
         public readonly string SourceFilesFolderName;
 
-        public IBinaries(string _projectName, string _sourceFolder)
+        public IExportProject(string _projectName, string _sourceFolder)
         {
             Name = _projectName;
             SourceFilesFolderName = _sourceFolder;
@@ -127,11 +127,39 @@ namespace Puma.Common
             AddTargets(Puma.SharpmakeUtils.GetDefaultTarget());
         }
 
+        [Sharpmake.Configure]
+        public abstract void ConfigureAll(Configuration conf, Sharpmake.Target target);
+    }
+
+    [Sharpmake.Export]
+    abstract public class IHeaderOnly : IExportProject
+    {
+        public IHeaderOnly(string _projectName, string _sourceFolder)
+            : base (_projectName, _sourceFolder)
+        {}
+
+        public abstract void ConfigureIncludes(Configuration conf, Sharpmake.Target target);
+
+        [Sharpmake.Configure]
+        public override void ConfigureAll(Configuration conf, Sharpmake.Target target)
+        {
+            ConfigureIncludes(conf, target);
+        }
+    }
+
+    [Sharpmake.Export]
+    abstract public class IBinaries : IExportProject
+    {
+
+        public IBinaries(string _projectName, string _sourceFolder)
+        : base(_projectName, _sourceFolder)
+        { }
+
         public abstract void ConfigureIncludes(Configuration conf, Sharpmake.Target target);
         public abstract void ConfigureLink(Configuration conf, Sharpmake.Target target);
 
         [Sharpmake.Configure]
-        public virtual void ConfigureAll(Configuration conf, Sharpmake.Target target)
+        public override void ConfigureAll(Configuration conf, Sharpmake.Target target)
         {
             ConfigureIncludes(conf, target);
             ConfigureLink(conf, target);
