@@ -58,7 +58,7 @@ namespace Puma.SharpmakeBase
         public string SourceFilesFolderName;
 
         public readonly string ProjectGenerationPath = Puma.SharpmakeUtils.GetProjectsPath() + @"\[project.Name]";
-        public readonly string TargetOutputPath    = Puma.SharpmakeUtils.GetOutputPath();
+        public readonly string TargetOutputPath    = Puma.SharpmakeUtils.GetOutputPath() + @"\[project.Name]";
 
         public IApplication(string _projectName, string _sourceFolder)
         {
@@ -77,7 +77,7 @@ namespace Puma.SharpmakeBase
             conf.ProjectPath = ProjectGenerationPath;
 
             //Path were the binaries will be generated on compilation
-            conf.TargetPath = TargetOutputPath;
+            conf.TargetPath = TargetOutputPath + @"\" + target.Optimization.ToString();
         }
     }
 
