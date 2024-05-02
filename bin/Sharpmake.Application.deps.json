@@ -6,9 +6,9 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Sharpmake.Application/0.41.0": {
+      "Sharpmake.Application/0.46.0-12-g87765d32": {
         "dependencies": {
-          "GitInfo": "3.3.3",
+          "GitInfo": "3.3.4",
           "Sharpmake": "1.0.0",
           "Sharpmake.CommonPlatforms": "1.0.0",
           "Sharpmake.Generators": "1.0.0"
@@ -19,7 +19,7 @@
       },
       "Basic.Reference.Assemblies.Net60/1.3.0": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "4.8.0"
+          "Microsoft.CodeAnalysis.Common": "4.9.2"
         },
         "runtime": {
           "lib/netstandard2.0/Basic.Reference.Assemblies.Net60.dll": {
@@ -28,23 +28,23 @@
           }
         }
       },
-      "GitInfo/3.3.3": {
+      "GitInfo/3.3.4": {
         "dependencies": {
           "ThisAssembly.Constants": "1.4.1"
         }
       },
       "Microsoft.CodeAnalysis.Analyzers/3.3.4": {},
-      "Microsoft.CodeAnalysis.Common/4.8.0": {
+      "Microsoft.CodeAnalysis.Common/4.9.2": {
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Reflection.Metadata": "7.0.0",
+          "System.Collections.Immutable": "8.0.0",
+          "System.Reflection.Metadata": "8.0.0",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.CodeAnalysis.dll": {
-            "assemblyVersion": "4.8.0.0",
-            "fileVersion": "4.800.23.55801"
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.900.224.12906"
           }
         },
         "resources": {
@@ -89,14 +89,14 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp/4.8.0": {
+      "Microsoft.CodeAnalysis.CSharp/4.9.2": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "4.8.0"
+          "Microsoft.CodeAnalysis.Common": "4.9.2"
         },
         "runtime": {
           "lib/net6.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "assemblyVersion": "4.8.0.0",
-            "fileVersion": "4.800.23.55801"
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.900.224.12906"
           }
         },
         "resources": {
@@ -143,11 +143,11 @@
       },
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.NETCore.Platforms/5.0.0": {},
-      "Microsoft.VisualStudio.Setup.Configuration.Interop/3.8.2112": {
+      "Microsoft.VisualStudio.Setup.Configuration.Interop/3.9.2164": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.VisualStudio.Setup.Configuration.Interop.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "3.8.2112.61926"
+            "fileVersion": "3.9.2164.57262"
           }
         }
       },
@@ -157,25 +157,25 @@
           "System.Security.Principal.Windows": "5.0.0"
         }
       },
-      "System.Collections.Immutable/7.0.0": {
+      "System.Collections.Immutable/8.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/System.Collections.Immutable.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
-      "System.Reflection.Metadata/7.0.0": {
+      "System.Reflection.Metadata/8.0.0": {
         "dependencies": {
-          "System.Collections.Immutable": "7.0.0"
+          "System.Collections.Immutable": "8.0.0"
         },
         "runtime": {
           "lib/net6.0/System.Reflection.Metadata.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
@@ -197,8 +197,8 @@
       "Sharpmake/1.0.0": {
         "dependencies": {
           "Basic.Reference.Assemblies.Net60": "1.3.0",
-          "Microsoft.CodeAnalysis.CSharp": "4.8.0",
-          "Microsoft.VisualStudio.Setup.Configuration.Interop": "3.8.2112",
+          "Microsoft.CodeAnalysis.CSharp": "4.9.2",
+          "Microsoft.VisualStudio.Setup.Configuration.Interop": "3.9.2164",
           "Microsoft.Win32.Registry": "5.0.0"
         },
         "runtime": {
@@ -225,7 +225,7 @@
     }
   },
   "libraries": {
-    "Sharpmake.Application/0.41.0": {
+    "Sharpmake.Application/0.46.0-12-g87765d32": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -237,12 +237,12 @@
       "path": "basic.reference.assemblies.net60/1.3.0",
       "hashPath": "basic.reference.assemblies.net60.1.3.0.nupkg.sha512"
     },
-    "GitInfo/3.3.3": {
+    "GitInfo/3.3.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-l7m4M/figjWz4B3eIL2Qy3UJiP2vvTOTeavlCT/GGH0khg0uxLanh/cwTZ27AZNhim56q1Mk0nbyRXtLqF4vmg==",
-      "path": "gitinfo/3.3.3",
-      "hashPath": "gitinfo.3.3.3.nupkg.sha512"
+      "sha512": "sha512-uaK+WXIrHCkjJudwMfgVkI8tTNqjcB19bHpSBe4C5pOS4cx9JsPkCcaafN2vY2snkRiCQZCpt56yLslZOyvT2g==",
+      "path": "gitinfo/3.3.4",
+      "hashPath": "gitinfo.3.3.4.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.Analyzers/3.3.4": {
       "type": "package",
@@ -251,19 +251,19 @@
       "path": "microsoft.codeanalysis.analyzers/3.3.4",
       "hashPath": "microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512"
     },
-    "Microsoft.CodeAnalysis.Common/4.8.0": {
+    "Microsoft.CodeAnalysis.Common/4.9.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/jR+e/9aT+BApoQJABlVCKnnggGQbvGh7BKq2/wI1LamxC+LbzhcLj4Vj7gXCofl1n4E521YfF9w0WcASGg/KA==",
-      "path": "microsoft.codeanalysis.common/4.8.0",
-      "hashPath": "microsoft.codeanalysis.common.4.8.0.nupkg.sha512"
+      "sha512": "sha512-M5PThug7b2AdxL7xKmQs50KzAQTl9jENw5jMT3iUt16k+DAFlw1S87juU3UuPs3gvBm8trMBSOEvSFDr31c9Vw==",
+      "path": "microsoft.codeanalysis.common/4.9.2",
+      "hashPath": "microsoft.codeanalysis.common.4.9.2.nupkg.sha512"
     },
-    "Microsoft.CodeAnalysis.CSharp/4.8.0": {
+    "Microsoft.CodeAnalysis.CSharp/4.9.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+3+qfdb/aaGD8PZRCrsdobbzGs1m9u119SkkJt8e/mk3xLJz/udLtS2T6nY27OTXxBBw10HzAbC8Z9w08VyP/g==",
-      "path": "microsoft.codeanalysis.csharp/4.8.0",
-      "hashPath": "microsoft.codeanalysis.csharp.4.8.0.nupkg.sha512"
+      "sha512": "sha512-HGIo7E9Mf3exAJbUdYpDFfLoYkSVaHDJXPyusWTYUTBaOPCowGw+Gap5McE1w+K+ryIXre72oiqL88sQHmHBmg==",
+      "path": "microsoft.codeanalysis.csharp/4.9.2",
+      "hashPath": "microsoft.codeanalysis.csharp.4.9.2.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -279,12 +279,12 @@
       "path": "microsoft.netcore.platforms/5.0.0",
       "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
     },
-    "Microsoft.VisualStudio.Setup.Configuration.Interop/3.8.2112": {
+    "Microsoft.VisualStudio.Setup.Configuration.Interop/3.9.2164": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5qYOpReBk1mc+c+2L3WCsaWAOPTG8VhF0oP3Spm//nj1ArNhAwnax09cW9lWcfVVGcTY35t/ORoydr3uUb98Ow==",
-      "path": "microsoft.visualstudio.setup.configuration.interop/3.8.2112",
-      "hashPath": "microsoft.visualstudio.setup.configuration.interop.3.8.2112.nupkg.sha512"
+      "sha512": "sha512-KV9Ip+xFw57PKj6YlIC4ZSAj+gCkUqsr67IlNQTRLbYsEvd5gZiqgDb6AjTvPypc5yfI1aiLXTBIs/56r8P0rA==",
+      "path": "microsoft.visualstudio.setup.configuration.interop/3.9.2164",
+      "hashPath": "microsoft.visualstudio.setup.configuration.interop.3.9.2164.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/5.0.0": {
       "type": "package",
@@ -293,19 +293,19 @@
       "path": "microsoft.win32.registry/5.0.0",
       "hashPath": "microsoft.win32.registry.5.0.0.nupkg.sha512"
     },
-    "System.Collections.Immutable/7.0.0": {
+    "System.Collections.Immutable/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
-      "path": "system.collections.immutable/7.0.0",
-      "hashPath": "system.collections.immutable.7.0.0.nupkg.sha512"
+      "sha512": "sha512-AurL6Y5BA1WotzlEvVaIDpqzpIPvYnnldxru8oXJU2yFxFUy3+pNXjXd1ymO+RA0rq0+590Q8gaz2l3Sr7fmqg==",
+      "path": "system.collections.immutable/8.0.0",
+      "hashPath": "system.collections.immutable.8.0.0.nupkg.sha512"
     },
-    "System.Reflection.Metadata/7.0.0": {
+    "System.Reflection.Metadata/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MclTG61lsD9sYdpNz9xsKBzjsmsfCtcMZYXz/IUr2zlhaTaABonlr1ESeompTgM+Xk+IwtGYU7/voh3YWB/fWw==",
-      "path": "system.reflection.metadata/7.0.0",
-      "hashPath": "system.reflection.metadata.7.0.0.nupkg.sha512"
+      "sha512": "sha512-ptvgrFh7PvWI8bcVqG5rsA/weWM09EnthFHR5SCnS6IN+P4mj6rE1lBDC4U8HL9/57htKAqy4KQ3bBj84cfYyQ==",
+      "path": "system.reflection.metadata/8.0.0",
+      "hashPath": "system.reflection.metadata.8.0.0.nupkg.sha512"
     },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",
