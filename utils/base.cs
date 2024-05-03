@@ -151,7 +151,6 @@ namespace Puma.SharpmakeBase
 
         public abstract void ConfigureIncludes(Configuration conf, Sharpmake.Target target);
 
-        [Sharpmake.Configure]
         public override void ConfigureAll(Configuration conf, Sharpmake.Target target)
         {
             base.ConfigureAll(conf, target);
@@ -170,7 +169,6 @@ namespace Puma.SharpmakeBase
         public abstract void ConfigureIncludes(Configuration conf, Sharpmake.Target target);
         public abstract void ConfigureLink(Configuration conf, Sharpmake.Target target);
 
-        [Sharpmake.Configure]
         public override void ConfigureAll(Configuration conf, Sharpmake.Target target)
         {
             base.ConfigureAll(conf, target);
