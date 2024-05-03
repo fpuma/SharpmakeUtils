@@ -1,6 +1,6 @@
 using System.IO;
 
-internal class ICompiledProject
+internal class IBaseConfiguration
 {
     static public void ConfigureAll(Sharpmake.Project.Configuration conf, Sharpmake.Target target)
     {
@@ -71,7 +71,7 @@ namespace Puma.SharpmakeBase
         [Sharpmake.Configure]
         public virtual void ConfigureAll(Configuration conf, Sharpmake.Target target)
         {
-            ICompiledProject.ConfigureAll(conf, target);
+            IBaseConfiguration.ConfigureAll(conf, target);
 
             //Path were the project will be generated
             conf.ProjectPath = ProjectGenerationPath;
@@ -111,15 +111,19 @@ namespace Puma.SharpmakeBase
         }
     }
 
+
     //******************************************************************************************
-    //Exports
+    //No output projects
     //******************************************************************************************
-    [Sharpmake.Export]
-    public abstract class IExportProject : Sharpmake.Project
+
+    [Sharpmake.Generate]
+    public abstract class INoOutputProject : Sharpmake.Project
     {
         public readonly string SourceFilesFolderName;
 
-        public IExportProject(string _projectName, string _sourceFolder)
+        public readonly string ProjectGenerationPath = Puma.SharpmakeUtils.GetProjectsPath() + @"\[project.Name]";
+
+        public INoOutputProject(string _projectName, string _sourceFolder)
         {
             Name = _projectName;
             SourceFilesFolderName = _sourceFolder;
@@ -128,11 +132,18 @@ namespace Puma.SharpmakeBase
         }
 
         [Sharpmake.Configure]
-        public abstract void ConfigureAll(Configuration conf, Sharpmake.Target target);
+        public virtual void ConfigureAll(Configuration conf, Sharpmake.Target target)
+        {
+            IBaseConfiguration.ConfigureAll(conf, target);
+
+            conf.ProjectPath = ProjectGenerationPath;
+
+            conf.Output = Configuration.OutputType.None;
+        }
     }
 
-    [Sharpmake.Export]
-    abstract public class IHeaderOnly : IExportProject
+    [Sharpmake.Generate]
+    abstract public class IHeaderOnly : INoOutputProject
     {
         public IHeaderOnly(string _projectName, string _sourceFolder)
             : base (_projectName, _sourceFolder)
@@ -143,12 +154,13 @@ namespace Puma.SharpmakeBase
         [Sharpmake.Configure]
         public override void ConfigureAll(Configuration conf, Sharpmake.Target target)
         {
+            base.ConfigureAll(conf, target);
             ConfigureIncludes(conf, target);
         }
     }
 
-    [Sharpmake.Export]
-    abstract public class IBinaries : IExportProject
+    [Sharpmake.Generate]
+    abstract public class IBinaries : INoOutputProject
     {
 
         public IBinaries(string _projectName, string _sourceFolder)
@@ -161,6 +173,7 @@ namespace Puma.SharpmakeBase
         [Sharpmake.Configure]
         public override void ConfigureAll(Configuration conf, Sharpmake.Target target)
         {
+            base.ConfigureAll(conf, target);
             ConfigureIncludes(conf, target);
             ConfigureLink(conf, target);
         }
