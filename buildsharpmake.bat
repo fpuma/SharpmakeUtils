@@ -9,7 +9,7 @@ dotnet build Sharpmake.sln -c Release
 echo Sharpmake build finished
 cd..
 echo Copying files...
-xcopy /s sharpmake\Sharpmake.Application\bin\Release\net6.0 bin
+xcopy /s sharpmake\Sharpmake.Application\bin\Release\net8.0 bin
 
 echo ********
 echo **DONE**
